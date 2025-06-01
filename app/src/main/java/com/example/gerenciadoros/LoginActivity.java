@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
             String email = edtEmail.getText().toString();
             String senha = edtSenha.getText().toString();
 
+
             if(email.equals(emailSalvo) && senha.equals(senhaSalva)) {
                 startActivity(new Intent(this, MainMenuActivity.class));
                 finish();

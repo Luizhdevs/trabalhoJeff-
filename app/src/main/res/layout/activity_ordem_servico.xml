@@ -1,26 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="24dp"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".OrdemServicoActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <TextView android:text="Cliente:" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <TextView android:id="@+id/txtCliente" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <TextView android:text="Descrição:" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <TextView android:id="@+id/txtDescricao" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView android:text="Data:" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <TextView android:id="@+id/txtData" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView android:text="Status:" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <TextView android:id="@+id/txtStatus" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <Button android:id="@+id/btnVoltar" android:text="Voltar" android:layout_marginTop="24dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
-    </LinearLayout>
-</ScrollView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cliente:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
+            <TextView
+                android:id="@+id/txtCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="Nome Completo do Cliente" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descrição do Serviço:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
+            <TextView
+                android:id="@+id/txtDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="Descrição detalhada do serviço que foi solicitado e/ou realizado." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
+            <TextView
+                android:id="@+id/txtData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="01 de junho de 2025" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/status_background_placeholder"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="2dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@color/white"
+                tools:text="Aberta" />
+
+            <!-- Botão Voltar removido, Toolbar agora lida com isso -->
+            <!-- <Button android:id="@+id/btnVoltar" android:text="Voltar" android:layout_marginTop="24dp" android:layout_width="match_parent" android:layout_height="wrap_content" /> -->
+
+            <!-- Opcional: Botão para Editar/Mudar Status -->
+            <!-- <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditarOS"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Editar Ordem" /> -->
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
