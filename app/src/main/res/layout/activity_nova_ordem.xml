@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- CoordinatorLayout com AppBar (barra superior) e o conteúdo da tela dentro de um NestedScrollView -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"> <!-- Use standard AppBar theme -->
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"> 
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -30,8 +31,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <!-- Use TextInputLayout for better input fields -->
+            <!-- Campo para digitar o nome do cliente. -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilCliente"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
