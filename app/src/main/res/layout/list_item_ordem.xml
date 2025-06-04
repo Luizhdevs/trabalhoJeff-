@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--  Componente visual do tipo card com bordas arredondadas. -->
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,11 +12,13 @@
     app:cardElevation="2dp"
     app:cardCornerRadius="8dp">
 
+    <!--  Layout que permite alinhar os elementos com precisão. --> 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <!-- Exibe o nome do cliente da ordem de serviço. --> 
         <TextView
             android:id="@+id/txtItemCliente"
             android:layout_width="0dp"
@@ -27,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Nome do Cliente Muito Longo Para Testar Quebra de Linha" />
 
+        <!-- Exibe a descrição da ordem --> 
         <TextView
             android:id="@+id/txtItemDescricao"
             android:layout_width="0dp"
@@ -42,6 +46,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtItemCliente"
             tools:text="Descrição breve do serviço realizado ou a ser realizado..." />
 
+        <!-- Mostra a data formatada da ordem. -->
         <TextView
             android:id="@+id/txtItemData"
             android:layout_width="wrap_content"
@@ -51,7 +56,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtItemDescricao"
             tools:text="01/06/2025" />
-
+        
+        <!-- Mostra o status da ordem -->
         <TextView
             android:id="@+id/txtItemStatus"
             android:layout_width="wrap_content"
@@ -69,6 +75,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtItemDescricao"
             tools:text="Aberta" />
 
+        <!-- Checkbox que aparece apenas no modo de seleção múltipla. --> 
         <CheckBox
             android:id="@+id/chkSelecionarOrdem"
             android:layout_width="wrap_content"
